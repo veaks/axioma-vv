@@ -1,0 +1,144 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+body	{
+	font-family:	Arial, 'Roboto', Verdana, Arial, sans-serif;
+	font-size:		small;
+	background-color:	#F0FFFF;
+	/*background-image:	url("fon.jpg");
+	background-size: 	auto;*/
+	color:		#9A8044;
+	margin-left:	20%;
+	margin-right:	20%;
+	border:		1px solid black;
+	}
+
+
+
+h1	{
+	font-size:		150%;
+	}
+
+h2	{
+	font-size:		120%;
+	}
+
+td	{padding: 0px 10px 0px 10px;
+	text-align: center;}
+
+table 	{border-spacing: 0px;
+	border-collapse: collapse;}
+
+.table {width: 100%;}
+
+#header	{
+	margin:		10px 10px 0px 10px;
+	height:		133px;
+	}
+
+#logo	{
+
+	}
+
+
+.button 	{
+    	background-color: 	#3FAE9A;
+    	border: 		none;
+	border-radius:	10px;
+   	color: 		white;
+	padding:		auto;
+	margin:		10px 10px 0px 10px;
+	width:		200px;
+	height:		40px;
+    	text-align: 	center;
+    	font-size: 	16px;
+    	cursor: 		pointer;
+	}
+
+.button_red 	{
+    	background-color: 	#FF6347;
+    	border: 		none;
+	border-radius:	10px;
+   	color: 		white;
+	padding:		auto;
+	margin:		10px 10px 0px 10px;
+	width:		200px;
+	height:		60px;
+    	text-align: 	center;
+    	font-size: 	16px;
+    	cursor: 		pointer;
+	}
+
+
+
+
+#tableContainer {
+	display:		table;
+	border-spacing:	10px;
+	margin:		0px 0px 0px 0px;
+	}
+
+#tableRow {
+	display:		table-row;
+	}
+
+#today	{
+	color:		red;
+	font-weight:	bold;
+	}
+
+
+#calendar1 {
+	text-align:	center;
+	border:		1px solid #9A8044;
+	margin:		0px 0px 0px 20px;
+	}
+
+
+
+#left 	{
+	display:		table-cell;
+	width:		22%;
+	padding:		15px;
+	vertical-align:	top;
+	border:		1px solid #9A8044;
+	}
+
+#right 	{
+	display:		table-cell;
+	width:		78%;
+	padding:		15px;
+	vertical-align:	top;
+	}
+
+#footer 	{
+	text-align:	center;
+	font-size:		0.8em;
+	padding:		5px;
+	margin:		0px 10px 10px 10px;
+	border:		1px solid #9A8044;
+	}
+
+
+.blocks	{
+	border:		1px solid #9A8044;
+	padding:		15px;
+	margin:		0px 0px 10px 0px;
+	}
+
+
+
+
+
+a:link 	{
+  	color:            	#9A8044;
+  	text-decoration:  	none;
+  	border-bottom:    	thin dotted #b76666;
+	}
+
+a:visited	 {
+  	color:            	#9A8044;
+ 	text-decoration:  	none;
+  	border-bottom:    	thin dotted #675c47;
+	}

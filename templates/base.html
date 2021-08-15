@@ -1,0 +1,140 @@
+﻿{% load static %}
+{% url 'offer:home' as offer_home_url %}
+{% url 'offer:detail' as offer_detail_url %}
+{% url 'accounts:login' as accounts_login_url %}
+
+<!DOCTYPE html>
+<html  lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title> {% block title %} {% endblock %} </title>
+
+    <link type="text/css"  rel="stylesheet"  href="{% static 'css/eventCalendar.css' %}" >
+    <link type="text/css"  rel="stylesheet"  href="{% static 'css/eventCalendar_theme_responsive.css' %}" >
+    <link type="text/css"  rel="stylesheet"  href="{% static 'css/styles.css' %}" >
+
+  </head>
+<body>
+
+
+<div id="header">
+
+<table class="table"><tbody>
+    <tr>
+        <td rowspan="2"><a href="{% url 'home' %}"><img src="{% static 'img/logo_2.png' %}"  alt="АКСИОМА. Бухгалтерские и юридические услуги."  width="418"  height="133"></a></td>
+        <td><img src="{% static 'img/address.png' %} " width="40"  height="40"></td>
+        <td><p>Тверская область, г. Вышний Волочек, <br>ул. Ванчакова линия, д. 13, оф. 2</p></td>
+        <td><img src="{% static 'img/tel.png' %}" width="30"  height="30"></td>
+        <td><p>+7(904)014-64-95 (whatsapp) <br> +7(4822)64-54-04 </p></td>
+    </tr>
+    <tr>
+        <td><img src="{% static 'img/email.png' %}" width="40"  height="40"></td>
+        <td><p> e-mail: axioma.vv@yandex.ru </p></td>
+        <td><img src="{% static 'img/account.png' %}" width="30"  height="30"></td>
+        <td><h2><a href="{% url 'accounts:login' %}"> Личный кабинет  </a></h2></td>
+    </tr></tbody>
+</table>
+
+
+</div>
+
+
+
+<div id="menu">
+<a href="{% url 'offer:home' %}"><button class="button_red" > Я хочу </button></a>
+<button class="button"> О нас </button>
+<button class="button"> Полезная информация </button>
+<button class="button"> Наши предложения </button>
+<button class="button"> Наши партнеры </button>
+</div>
+
+
+<div id="tableContainer">
+<div id="tableRow">
+<div id="left">
+
+<div class="blocks">
+<h2> Календарь бухгалтера: </h2>
+
+<div id="eventCalendar" style="width: 200px; margin: 50px auto;"></div>
+
+
+</div>
+
+<div class="blocks">
+<h2> Полезные ссылки: </h2>
+<ul>
+<li> <a href="https://www.nalog.gov.ru/rn69/ifns/ifns69_10/" >ИФНС Тверь </a> </li>
+<li> <a href="https://fss.ru/"> ФСС </a> </li>
+<li> <a href="https://pfr.gov.ru/"> ПФР </a> </li>
+<li> <a href="https://www.pochta.ru/post-index"> Почтовые индексы </a> </li>
+<li> <a href="https://not69.ru/notaries/list"> Нотариусы г. Тверь </a> </li>
+<li> <a href="https://service.nalog.ru/static/personal-data.html?svc=inn&from=%2Finn.do"> Узнай свой ИНН </a> </li>
+<li> <a href="https://fek.ru/"> Проверка фирмы </a> </li>
+</ul>
+</div>
+<div class="blocks"> 
+<h2>Предложения наших партнеров: </h2>
+</div>
+</div>
+
+
+<div id="right" class="blocks" >
+<div id="content">
+
+{% block content %} {% endblock %}
+
+</div>
+</div>
+</div>	
+</div>
+
+
+
+<div id="footer">
+&copy; ИП "Сумбаев Р.А."
+</div>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="{% static 'js/moment.js' %}"></script>
+	<script src="{% static 'js/jquery.eventCalendar.js' %}"></script>
+	<script src="{% static 'js/scripts.js' %}"></script>
+	<script>
+	$(function(){
+		var data = [
+			{"date": "2021-06-28 00:00:00", "title": "Декларация по налогу на прибыль за май 2021 года", "description": "Компании, которые отчитываются ежемесячно", "url": ""},
+			{"date": "2021-06-28 00:00:00", "title": "Расчет по налогу на прибыль за май 2021 года", "description": "Налоговые агенты, уплачивающие ежемесячные авансовые платежи по фактически полученной прибыли", "url": ""},
+			{"date": "2021-07-15 00:00:00", "title": "С3В-М за июнь 2021 года", "description": "Все страхователи", "url": ""},
+			{"date": "2021-07-15 00:00:00", "title": "С3В-ТД за июнь 2021 года", "description": "Все работодатели при наличии оснований", "url": ""},
+			{"date": "2021-07-20 00:00:00", "title": "4-ФСС за полугодие / 2 квартал 2021 года на бумаге", "description": "Все страхователи с численностью сотрудников менее 25 человек", "url": ""},
+			{"date": "2021-07-20 00:00:00", "title": "Декларация по водному налогу за 2 квартал 2021 года", "description": "Компании, имеющие водные объекты", "url": ""}
+];
+		$('#eventCalendar').eventCalendar({
+			jsonData: data,
+			jsonDateFormat: 'human',
+			startWeekOnMonday: false,
+			openEventInNewWindow: true,
+			dateFormat: 'DD-MM-YYYY',
+			showDescription: false,
+			locales: {
+				locale: "ru",
+				txt_noEvents: "Нет запланированных событий",
+				txt_SpecificEvents_prev: "",
+				txt_SpecificEvents_after: "события:",
+				txt_NextEvents: "Следующие события:",
+				txt_GoToEventUrl: "Смотреть",
+				moment: {
+					"months" : [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь","Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
+					"monthsShort" : [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн","Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+					"weekdays" : [ "Воскресенье", "Понедельник","Вторник","Среда","Четверг","Пятница","Суббота" ],
+					"weekdaysShort" : [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ],
+					"weekdaysMin" : [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ]
+				}
+			}
+	});
+	});
+	</script>
+
+
+</body>
+</html>

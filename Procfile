@@ -1,0 +1,1 @@
+web: gunicorn axioma.wsqi --log-file -
