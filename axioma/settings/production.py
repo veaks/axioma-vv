@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-his)e)tweviy=5d70e=262si$d)egk8tkd%9l4)0kbvm$h*a0s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['axioma-vv.herokuapp.com']
 
 
 # Application definition
