@@ -1,1 +1,1 @@
-web: gunicorn axioma.wsqi --log-file -
+web: gunicorn axioma.wsgi --log-file -
