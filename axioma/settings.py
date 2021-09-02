@@ -131,7 +131,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.yandex.ru' #Например, smtp.gmail.com
 EMAIL_HOST_USER = 'veaks@yandex.ru' #Например, user@gmail.com. Именно его необходимо указывать как ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ в исходном коде предыдущего пункта
