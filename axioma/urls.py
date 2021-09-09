@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView
 from django.urls import path, include
 
-from axioma.views import home, contact_view
+from axioma.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('offer/', include(('offer.urls', 'offer'))),
     path('accounts/', include(('accounts.urls', 'accounts'))),
-    path('contact/', contact_view),
+    path('sendmail/', include('sendmail.urls')),
     path('', home, name='home'),
 ]

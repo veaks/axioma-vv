@@ -1,9 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render
-
-from axioma.forms import ContactForm
 
 content_index = """Противоположная точка зрения подразумевает, что стремящиеся вытеснить традиционное производство, нано
 технологии рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Реплицированные с зарубежных исто
@@ -48,27 +45,3 @@ def home(request):
     return render(request, 'home.html', {"content": content_index})
 
 
-def contact_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        # Если форма заполнена корректно, сохраняем все введённые пользователем значения
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            sender = form.cleaned_data['sender']
-            message = form.cleaned_data['message']
-            copy = form.cleaned_data['copy']
-            recipients = ['veaks@yandex.ru']
-            # Если пользователь захотел получить копию себе, добавляем его в список получателей
-            if copy:
-                recipients.append(sender)
-            try:
-                send_mail(subject, message, 'veaks@yandex.ru', recipients)
-            except BadHeaderError: #Защита от уязвимости
-                return HttpResponse('Invalid header found')
-            # Переходим на другую страницу, если сообщение отправлено
-                return render(request, 'site/thanks.html')
-    else:
-        # Заполняем форму
-        form = ContactForm()
-    # Отправляем форму на страницу
-    return render(request, 'contact.html', {'form': form})

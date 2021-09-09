@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'offer',
     'accounts',
+    'sendmail',
 ]
 
 MIDDLEWARE = [
@@ -130,8 +131,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.yandex.ru' #Например, smtp.gmail.com
-EMAIL_HOST_USER = 'veaks@yandex.ru' #Например, user@gmail.com. Именно его необходимо указывать как ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ в исходном коде предыдущего пункта
-EMAIL_HOST_PASSWORD = 'valera2015'
+RECIPIENTS_EMAIL = ['veaks@yandex.ru']   # замените на свою почту
+DEFAULT_FROM_EMAIL = 'veaks@yandex.ru'  # замените на свою почту
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
