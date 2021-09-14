@@ -1,3 +1,4 @@
+from django.conf.global_settings import EMAIL_HOST_USER
 from django.shortcuts import render
 
 from django.core.mail import send_mail, BadHeaderError
@@ -20,7 +21,7 @@ def contact_view(request):
             message = form.cleaned_data['message']
             try:
                 send_mail(f'{subject} от {from_email}', message,
-                          DEFAULT_FROM_EMAIL, RECIPIENTS_EMAIL)
+                          EMAIL_HOST_USER, RECIPIENTS_EMAIL)
             except BadHeaderError:
                 return HttpResponse('Ошибка в теме письма.')
             return redirect('success')

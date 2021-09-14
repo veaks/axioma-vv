@@ -131,6 +131,13 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-RECIPIENTS_EMAIL = ['veaks@yandex.ru']   # замените на свою почту
-DEFAULT_FROM_EMAIL = 'veaks@yandex.ru'  # замените на свою почту
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#RECIPIENTS_EMAIL = ['veaks@yandex.ru']   # замените на свою почту
+#DEFAULT_FROM_EMAIL = 'veaks@yandex.ru'  # замените на свою почту
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "veaks@yandex.ru"
+EMAIL_HOST_PASSWORD = "valera2015"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
